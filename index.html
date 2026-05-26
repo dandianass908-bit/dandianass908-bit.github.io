@@ -1,538 +1,171 @@
 <!DOCTYPE html>
 <html lang="nl">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Portfolio Anass Dandi</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Anass Dandi - Portfolio</title>
 
   <style>
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-      scroll-behavior: smooth;
+      font-family: Arial, sans-serif;
     }
 
     body {
-      font-family: Arial, sans-serif;
-      background: #f4f7fb;
-      color: #172033;
-      line-height: 1.7;
+      background-color: #f5f5f5;
+      color: #111827;
     }
 
-    nav {
-      position: fixed;
-      width: 100%;
-      top: 0;
-      z-index: 1000;
-      background: rgba(255, 255, 255, 0.95);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 18px 9%;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-    }
-
-    nav h2 {
-      color: #2563eb;
-    }
-
-    nav a {
-      margin-left: 22px;
-      text-decoration: none;
-      color: #172033;
-      font-weight: bold;
-    }
-
-    nav a:hover {
-      color: #2563eb;
-    }
-
-    .hero {
-      min-height: 100vh;
-      background: linear-gradient(135deg, #1e3a8a, #0f172a);
+    header {
+      background: linear-gradient(135deg, #5b6ee1, #7c3aed);
       color: white;
-      display: flex;
-      align-items: center;
-      padding: 120px 9% 80px;
-    }
-
-    .hero-content {
-      max-width: 850px;
-    }
-
-    .hero h1 {
-      font-size: 56px;
-      margin-bottom: 20px;
-    }
-
-    .hero span {
-      color: #60a5fa;
-    }
-
-    .hero p {
-      font-size: 21px;
-      margin-bottom: 30px;
-      color: #dbeafe;
-    }
-
-    .btn {
-      display: inline-block;
-      background: #60a5fa;
-      color: #0f172a;
-      padding: 14px 28px;
-      border-radius: 10px;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    section {
-      padding: 90px 9%;
-    }
-
-    .section-title {
+      padding: 80px 20px;
       text-align: center;
-      font-size: 36px;
-      margin-bottom: 45px;
-      color: #1e3a8a;
     }
 
-    .intro-text {
-      max-width: 900px;
-      margin: auto;
-      text-align: center;
-      color: #475569;
-      font-size: 18px;
-    }
-
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 25px;
-    }
-
-    .card {
-      background: white;
-      padding: 30px;
-      border-radius: 18px;
-      box-shadow: 0 8px 25px rgba(0,0,0,0.08);
-    }
-
-    .card h3 {
-      color: #2563eb;
+    header h1 {
+      font-size: 3rem;
       margin-bottom: 15px;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .projects {
+      max-width: 1200px;
+      margin: 80px auto;
+      padding: 0 20px;
+    }
+
+    .projects h2 {
+      text-align: center;
+      font-size: 2.5rem;
+      margin-bottom: 50px;
+    }
+
+    .project-card-link {
+      text-decoration: none;
+      color: inherit;
+      display: block;
     }
 
     .project-card {
       background: white;
-      border-radius: 22px;
+      border-radius: 20px;
       overflow: hidden;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-      max-width: 1000px;
-      margin: auto;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+      transition: 0.3s ease;
+      cursor: pointer;
+    }
+
+    .project-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 35px rgba(0,0,0,0.15);
     }
 
     .project-banner {
-      background: linear-gradient(135deg, #2563eb, #0f172a);
-      color: white;
-      padding: 70px 40px;
-      text-align: center;
+      background: linear-gradient(135deg, #5b6ee1, #7c3aed);
+      height: 250px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
     .project-banner h3 {
-      font-size: 34px;
-      margin-bottom: 15px;
+      color: white;
+      font-size: 2rem;
     }
 
     .project-content {
-      padding: 40px;
+      padding: 30px;
+    }
+
+    .project-content h3 {
+      font-size: 2rem;
+      margin-bottom: 15px;
+    }
+
+    .project-content p {
+      font-size: 1.1rem;
+      line-height: 1.7;
+      margin-bottom: 20px;
+      color: #374151;
     }
 
     .tag {
       display: inline-block;
-      background: #dbeafe;
-      color: #1e3a8a;
-      padding: 7px 15px;
-      border-radius: 20px;
-      margin: 8px 6px 0 0;
-      font-size: 14px;
+      background: #eef2ff;
+      color: #4f46e5;
+      padding: 10px 16px;
+      border-radius: 30px;
+      margin-right: 10px;
+      margin-bottom: 15px;
       font-weight: bold;
+      font-size: 0.9rem;
     }
 
-    .timeline {
-      max-width: 1100px;
-      margin: auto;
-      display: grid;
-      gap: 30px;
-    }
-
-    .timeline-item {
-      background: white;
-      padding: 30px;
-      border-radius: 18px;
-      box-shadow: 0 8px 25px rgba(0,0,0,0.08);
-      border-left: 6px solid #2563eb;
-    }
-
-    .timeline-item h3 {
-      color: #1e3a8a;
-      margin-bottom: 12px;
-    }
-
-    .media-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 22px;
-      margin-top: 30px;
-    }
-
-    .media-box {
-      background: white;
-      padding: 18px;
-      border-radius: 18px;
-      box-shadow: 0 8px 25px rgba(0,0,0,0.08);
-    }
-
-    .media-box img,
-    .media-box video {
-      width: 100%;
-      border-radius: 14px;
-      display: block;
-    }
-
-    .media-box p {
-      margin-top: 12px;
-      color: #475569;
-      font-size: 15px;
-    }
-
-    .reflection {
-      background: #0f172a;
-      color: white;
-    }
-
-    .reflection .section-title {
-      color: #60a5fa;
-    }
-
-    .reflection-box {
-      max-width: 900px;
-      margin: auto;
-      background: #1e293b;
-      padding: 35px;
-      border-radius: 18px;
+    .project-link {
+      margin-top: 20px;
+      color: #2563eb;
+      font-weight: bold;
+      font-size: 1.1rem;
     }
 
     footer {
-      background: #020617;
+      background: #0f172a;
       color: white;
       text-align: center;
       padding: 30px;
-    }
-
-    .reveal {
-      opacity: 0;
-      transform: translateY(60px);
-      transition: 0.8s ease;
-    }
-
-    .reveal.active {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    @media (max-width: 750px) {
-      nav {
-        flex-direction: column;
-        gap: 10px;
-      }
-
-      nav a {
-        margin: 8px;
-      }
-
-      .hero h1 {
-        font-size: 38px;
-      }
-
-      .project-content {
-        padding: 25px;
-      }
+      margin-top: 80px;
     }
   </style>
 </head>
 
 <body>
 
-<nav>
-  <h2>Portfolio</h2>
-  <div>
-    <a href="#home">Home</a>
-    <a href="#over-mij">Over mij</a>
-    <a href="#skills">Skills</a>
-    <a href="#project">Project</a>
-  </div>
-</nav>
-
-<section class="hero" id="home">
-  <div class="hero-content reveal">
-    <h1>Hallo, ik ben <span>Anass Dandi</span></h1>
+  <header>
+    <h1>Anass Dandi</h1>
     <p>
-      Ik volg de richting Software Engineering en werk graag aan projecten waarin techniek,
-      onderzoek en samenwerking samenkomen.
+      Software Development student met interesse in technologie, inclusiviteit en interactieve projecten.
     </p>
-    <a href="#project" class="btn">Bekijk mijn project</a>
-  </div>
-</section>
+  </header>
 
-<section id="over-mij" class="reveal">
-  <h2 class="section-title">Over mij</h2>
-  <p class="intro-text">
-    Ik ben een Software Engineering student die graag leert door te doen. Tijdens projecten vind ik
-    het belangrijk om niet alleen naar de techniek te kijken, maar ook naar de mensen die het product
-    uiteindelijk gebruiken. Ik werk graag samen, denk mee over oplossingen en probeer mijn werk
-    duidelijk en overzichtelijk op te leveren.
-  </p>
-</section>
+  <section class="projects">
+    <h2>Mijn Projecten</h2>
 
-<section id="skills" class="reveal">
-  <h2 class="section-title">Skills</h2>
+    <a href="project-dark-tech.html" class="project-card-link">
+      <div class="project-card">
+        <div class="project-banner">
+          <h3>Dark Tech – Inclusive Robots</h3>
+        </div>
 
-  <div class="cards">
-    <div class="card">
-      <h3>Onderzoek</h3>
-      <p>
-        Ik heb onderzoek gedaan naar privacy, sociale robots, culturen in Diemen, werking van de NAO en de invloed van
-        technologie op verschillende doelgroepen. Daarnaast heb ik samen met het groepje gewerkt aan het adviesrapport.
-      </p>
-    </div>
+        <div class="project-content">
+          <h3>Dark Tech – Inclusive Robots</h3>
 
-    <div class="card">
-      <h3>Techniek</h3>
-      <p>
-        Ik heb gewerkt met de NAO-robot via de Choregraphe, zowel vanuit huis alleen als samen met het groepje op locatie. Hierbij heb ik geleerd hoe je robotgedrag,
-        bewegingen en dialogen kunt opbouwen.
-      </p>
-    </div>
+          <p>
+            Een interactief project waarin wij met de NAO-robot werkten aan inclusieve technologie
+            voor het Diemen 800 jaar festival.
+          </p>
 
-    <div class="card">
-      <h3>Samenwerken</h3>
-      <p>
-        Binnen het team werkte ik mee aan brainstormsessies, taakverdeling, feedbackmomenten,
-        gebruikerstesten en sprintreviews. Ik was altijd wel goed bereikbaar en ik was altijd aanwezig wanneer we afspraken op school om aan het project te werken.
-      </p>
-    </div>
-  </div>
-</section>
+          <span class="tag">NAO Robot</span>
+          <span class="tag">Choregraphe</span>
+          <span class="tag">Inclusiviteit</span>
 
-<section id="project" class="reveal">
-  <h2 class="section-title">Dark Tech – Inclusive Robots</h2>
-
-  <div class="project-card">
-    <div class="project-banner">
-      <h3>Dark Tech – Inclusive Robots</h3>
-      <p>Een project over sociale robots, inclusiviteit en het Diemen 800 jaar festival.</p>
-    </div>
-
-    <div class="project-content">
-      <h3>Over het project</h3>
-      <p>
-        Voor dit project werkte ik met mijn team aan een robotervaring voor het Diemen 800 jaar
-        festival. De opdracht kwam vanuit Digital Life. Het doel was om te onderzoeken hoe embodied
-        AI en sociale robots kunnen helpen om mensen met verschillende achtergronden dichter bij
-        elkaar te brengen.
-      </p>
-
-      <br>
-
-      <h3>Mijn rol</h3>
-      <p>
-        Mijn rol begon vooral bij onderzoek. In sprint 1 deed ik onderzoek naar privacyrisico’s van
-        sociale robots. In sprint 2 werkte ik samen met Dana aan onderzoek naar verschillende culturen
-        in Diemen. In sprint 3 en 4 ben ik mij meer gaan richten op de technische kant. Ik heb meegewerkt
-        aan de NAO-robot, Choregraphe, gebruikerstesten en het verbeteren van het prototype op basis
-        van feedback.
-      </p>
-
-      <div>
-        <span class="tag">Social Robots</span>
-        <span class="tag">NAO Robot</span>
-        <span class="tag">Choregraphe</span>
-        <span class="tag">Onderzoek</span>
-        <span class="tag">Gebruikerstesten</span>
-        <span class="tag">Inclusiviteit</span>
+          <p class="project-link">Bekijk Project →</p>
+        </div>
       </div>
-    </div>
-  </div>
-</section>
+    </a>
 
-<section class="reveal">
-  <h2 class="section-title">Projectproces</h2>
+  </section>
 
-  <div class="timeline">
-    <div class="timeline-item">
-      <h3>Sprint 1 – Dark side onderzoek</h3>
-      <p>
-        In de eerste sprint onderzochten we vooral de risico’s van sociale robots. Denk aan privacy,
-        dataverzameling, gezichtsherkenning, bias, softwarebugs en misinformatie. Mijn persoonlijke
-        onderzoek ging over privacyrisico’s van sociale robots. Ik keek naar hoe robots data verzamelen
-        via camera’s, microfoons en sensoren en welke risico’s dit kan hebben voor gebruikers.
-      </p>
-    </div>
-
-    <div class="timeline-item">
-      <h3>Sprint 2 – Dark side prototype</h3>
-    <p>
-     In sprint 2 maakten we de dark side tastbaar met een kartonnen robotprototype met
-     emotie-animaties. De doelgroep hierbij was jonge meisjes, omdat uit ons onderzoek bleek
-     dat zij sneller vertrouwen kunnen krijgen in een sociale robot. Door de robot emoties te
-     laten tonen, wilden we laten zien dat gebruikers zich sneller op hun gemak kunnen voelen
-     en daardoor mogelijk persoonlijke of gevoelige informatie delen.
-    </p>
-
-    <p>
-  Daarnaast deed ik samen met Dana onderzoek naar culturen in Diemen. Dit onderzoek was
-  een voorbereiding op sprint 3, waarin we de overstap maakten naar de light side en gingen
-  werken aan een inclusiever prototype.
-    </p>
-    </div>
-
-    <div class="timeline-item">
-      <h3>Sprint 3 – Eerste light side prototype</h3>
-      <p>
-        In sprint 3 gingen we van de dark side naar de light side. We gebruikten de inzichten uit ons
-        onderzoek om een eerste positieve toepassing te maken. We maakten een dialoog voor de
-        NAO-robot met informatie over Nederland en Suriname. Daarna voerden we gebruikerstesten uit.
-        Uit de feedback bleek dat de robot kortere stukjes moest vertellen, meer pauzes nodig had en
-        interactiever moest zijn.
-      </p>
-    </div>
-
-    <div class="timeline-item">
-      <h3>Sprint 4 – Eindprototype met NAO</h3>
-     <h3>Sprint 4 – Hitster spel met NAO</h3>
-<p>
-  In sprint 4 zijn we bezig met het toepassen van een Hitster-achtig spel op de NAO-robot.
-  Hierbij laat de robot verschillende dansjes en bewegingen zien die gekoppeld zijn aan
-  landen en culturen, zoals een Marokkaans dansje en een Surinaams dansje.
-</p>
-
-<p>
-  Met dit prototype willen we de light side van het project laten zien. De robot wordt gebruikt
-  om mensen op een leuke en interactieve manier met verschillende culturen in aanraking te
-  brengen. 
-</p>
-    </div>
-  </div>
-</section>
-
-<section class="reveal">
-  <h2 class="section-title">Beeldmateriaal</h2>
-
-  <div class="media-grid">
-    <div class="media-box">
-      <img src="images/sprint2-prototype-1.png" alt="Schets dark side prototype">
-      <p>Eerste schets van het dark side prototype.</p>
-    </div>
-
-    <div class="media-box">
-      <img src="images/sprint2-prototype-2.png" alt="Kartonnen robot prototype">
-      <p>Kartonnen robotprototype met scherm als gezicht.</p>
-    </div>
-
-    <div class="media-box">
-      <img src="images/sprint2-prototype-3.png" alt="Dark side robot prototype">
-      <p>Verbeterde versie van het dark side prototype.</p>
-    </div>
-
-    <div class="media-box">
-      <img src="images/choregraphe-1.png" alt="Choregraphe ontwikkeling">
-      <p>Werken aan bewegingen en interacties in Choregraphe.</p>
-    </div>
-
-    <div class="media-box">
-      <img src="images/choregraphe-2.png" alt="NAO robot software">
-      <p>Testen van de NAO-robot in de softwareomgeving.</p>
-    </div>
-
-    <div class="media-box">
-      <img src="images/nao-robot.png" alt="NAO robot prototype">
-      <p>NAO-robot tijdens het testen van het prototype.</p>
-    </div>
-  </div>
-</section>
-
-<section class="reveal">
-  <h2 class="section-title">Video demo’s</h2>
-
-  <div class="media-grid">
-    <div class="media-box">
-      <video controls>
-        <source src="videos/nao-demo-1.mp4" type="video/mp4">
-      </video>
-      <p>Demo van de NAO-robot tijdens het testen van bewegingen.</p>
-    </div>
-
-    <div class="media-box">
-      <video controls>
-        <source src="videos/nao-demo-2.mp4" type="video/mp4">
-      </video>
-      <p>Gebruikerstest met de eerste light side dialoog.</p>
-    </div>
-
-    <div class="media-box">
-      <video controls>
-        <source src="videos/nao-demo-3.mp4" type="video/mp4">
-      </video>
-      <p>Prototypevideo van de interactie met de NAO-robot.</p>
-    </div>
-  </div>
-</section>
-
-<section class="reflection reveal">
-  <h2 class="section-title">Reflectie</h2>
-
-  <div class="reflection-box">
-    <p>
-      Tijdens dit project heb ik geleerd dat een goed prototype niet alleen technisch moet werken,
-      maar ook moet aansluiten bij de mensen die het gebruiken. In het begin lag mijn focus vooral
-      op onderzoek, zoals privacy en cultuur. Later ben ik meer gaan werken aan de technische kant
-      met de NAO-robot en Choregraphe.
-    </p>
-
-    <br>
-
-    <p>
-      Wat ik vooral heb meegenomen, is dat feedback van gebruikers erg belangrijk is. Door de
-      gebruikerstesten kwamen we erachter dat onze eerste versie nog te lange teksten had en dat
-      gebruikers meer interactie wilden. Daardoor konden we het prototype verbeteren. Ook heb ik
-      geleerd om flexibeler te werken wanneer dingen anders lopen dan gepland, zoals bij de
-      beschikbaarheid van de robot.
-    </p>
-  </div>
-</section>
-
-<footer>
-  <p>© 2026 Anass Dandi - Portfolio</p>
-</footer>
-
-<script>
-  const reveals = document.querySelectorAll(".reveal");
-
-  function showOnScroll() {
-    reveals.forEach((element) => {
-      const windowHeight = window.innerHeight;
-      const elementTop = element.getBoundingClientRect().top;
-
-      if (elementTop < windowHeight - 100) {
-        element.classList.add("active");
-      }
-    });
-  }
-
-  window.addEventListener("scroll", showOnScroll);
-  showOnScroll();
-</script>
+  <footer>
+    <p>© 2026 Anass Dandi</p>
+  </footer>
 
 </body>
 </html>
