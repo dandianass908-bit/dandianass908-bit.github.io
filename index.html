@@ -1,171 +1,347 @@
 <!DOCTYPE html>
 <html lang="nl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Anass Dandi - Portfolio</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio Anass Dandi</title>
 
   <style>
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-      font-family: Arial, sans-serif;
+      scroll-behavior: smooth;
     }
 
     body {
-      background-color: #f5f5f5;
-      color: #111827;
+      font-family: Arial, sans-serif;
+      background: #f4f7fb;
+      color: #172033;
+      line-height: 1.7;
     }
 
-    header {
-      background: linear-gradient(135deg, #5b6ee1, #7c3aed);
+    nav {
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+      background: rgba(255, 255, 255, 0.95);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 18px 9%;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    }
+
+    nav h2 {
+      color: #2563eb;
+    }
+
+    nav a {
+      margin-left: 22px;
+      text-decoration: none;
+      color: #172033;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      color: #2563eb;
+    }
+
+    .hero {
+      min-height: 100vh;
+      background: linear-gradient(135deg, #1e3a8a, #0f172a);
       color: white;
-      padding: 80px 20px;
-      text-align: center;
+      display: flex;
+      align-items: center;
+      padding: 120px 9% 80px;
     }
 
-    header h1 {
-      font-size: 3rem;
+    .hero-content {
+      max-width: 850px;
+    }
+
+    .hero h1 {
+      font-size: 56px;
+      margin-bottom: 20px;
+    }
+
+    .hero span {
+      color: #60a5fa;
+    }
+
+    .hero p {
+      font-size: 21px;
+      margin-bottom: 30px;
+      color: #dbeafe;
+    }
+
+    .btn {
+      display: inline-block;
+      background: #60a5fa;
+      color: #0f172a;
+      padding: 14px 28px;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    section {
+      padding: 90px 9%;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 36px;
+      margin-bottom: 45px;
+      color: #1e3a8a;
+    }
+
+    .intro-text {
+      max-width: 900px;
+      margin: auto;
+      text-align: center;
+      color: #475569;
+      font-size: 18px;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 25px;
+    }
+
+    .card {
+      background: white;
+      padding: 30px;
+      border-radius: 18px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+    }
+
+    .card h3 {
+      color: #2563eb;
       margin-bottom: 15px;
-    }
-
-    header p {
-      font-size: 1.2rem;
-      max-width: 700px;
-      margin: 0 auto;
-    }
-
-    .projects {
-      max-width: 1200px;
-      margin: 80px auto;
-      padding: 0 20px;
-    }
-
-    .projects h2 {
-      text-align: center;
-      font-size: 2.5rem;
-      margin-bottom: 50px;
     }
 
     .project-card-link {
       text-decoration: none;
       color: inherit;
       display: block;
+      max-width: 1000px;
+      margin: auto;
     }
 
     .project-card {
       background: white;
-      border-radius: 20px;
+      border-radius: 22px;
       overflow: hidden;
-      box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
       transition: 0.3s ease;
       cursor: pointer;
     }
 
     .project-card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+      transform: translateY(-8px);
+      box-shadow: 0 16px 38px rgba(0,0,0,0.16);
     }
 
     .project-banner {
-      background: linear-gradient(135deg, #5b6ee1, #7c3aed);
-      height: 250px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      background: linear-gradient(135deg, #2563eb, #0f172a);
+      color: white;
+      padding: 70px 40px;
+      text-align: center;
     }
 
     .project-banner h3 {
-      color: white;
-      font-size: 2rem;
-    }
-
-    .project-content {
-      padding: 30px;
-    }
-
-    .project-content h3 {
-      font-size: 2rem;
+      font-size: 34px;
       margin-bottom: 15px;
     }
 
+    .project-content {
+      padding: 40px;
+    }
+
+    .project-content h3 {
+      color: #1e3a8a;
+      margin-bottom: 12px;
+      font-size: 25px;
+    }
+
     .project-content p {
-      font-size: 1.1rem;
-      line-height: 1.7;
-      margin-bottom: 20px;
-      color: #374151;
+      color: #475569;
+      margin-bottom: 18px;
     }
 
     .tag {
       display: inline-block;
-      background: #eef2ff;
-      color: #4f46e5;
-      padding: 10px 16px;
-      border-radius: 30px;
-      margin-right: 10px;
-      margin-bottom: 15px;
+      background: #dbeafe;
+      color: #1e3a8a;
+      padding: 7px 15px;
+      border-radius: 20px;
+      margin: 8px 6px 0 0;
+      font-size: 14px;
       font-weight: bold;
-      font-size: 0.9rem;
     }
 
     .project-link {
-      margin-top: 20px;
-      color: #2563eb;
+      margin-top: 25px;
+      color: #2563eb !important;
       font-weight: bold;
-      font-size: 1.1rem;
+      font-size: 17px;
     }
 
     footer {
-      background: #0f172a;
+      background: #020617;
       color: white;
       text-align: center;
       padding: 30px;
-      margin-top: 80px;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(60px);
+      transition: 0.8s ease;
+    }
+
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (max-width: 750px) {
+      nav {
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      nav a {
+        margin: 8px;
+      }
+
+      .hero h1 {
+        font-size: 38px;
+      }
+
+      .project-content {
+        padding: 25px;
+      }
     }
   </style>
 </head>
 
 <body>
 
-  <header>
-    <h1>Anass Dandi</h1>
+<nav>
+  <h2>Portfolio</h2>
+  <div>
+    <a href="#home">Home</a>
+    <a href="#over-mij">Over mij</a>
+    <a href="#skills">Skills</a>
+    <a href="#projecten">Projecten</a>
+  </div>
+</nav>
+
+<section class="hero" id="home">
+  <div class="hero-content reveal">
+    <h1>Hallo, ik ben <span>Anass Dandi</span></h1>
     <p>
-      Software Development student met interesse in technologie, inclusiviteit en interactieve projecten.
+      Ik volg de richting Software Engineering en werk graag aan projecten waarin techniek,
+      onderzoek en samenwerking samenkomen.
     </p>
-  </header>
+    <a href="#projecten" class="btn">Bekijk mijn project</a>
+  </div>
+</section>
 
-  <section class="projects">
-    <h2>Mijn Projecten</h2>
+<section id="over-mij" class="reveal">
+  <h2 class="section-title">Over mij</h2>
+  <p class="intro-text">
+    Ik ben een Software Engineering student die graag leert door te doen. Tijdens projecten vind ik
+    het belangrijk om niet alleen naar de techniek te kijken, maar ook naar de mensen die het product
+    uiteindelijk gebruiken. Ik werk graag samen, denk mee over oplossingen en probeer mijn werk
+    duidelijk en overzichtelijk op te leveren.
+  </p>
+</section>
 
-    <a href="project-dark-tech.html" class="project-card-link">
-      <div class="project-card">
-        <div class="project-banner">
-          <h3>Dark Tech – Inclusive Robots</h3>
-        </div>
+<section id="skills" class="reveal">
+  <h2 class="section-title">Skills</h2>
 
-        <div class="project-content">
-          <h3>Dark Tech – Inclusive Robots</h3>
+  <div class="cards">
+    <div class="card">
+      <h3>Onderzoek</h3>
+      <p>
+        Ik kan informatie verzamelen, analyseren en omzetten naar duidelijke inzichten voor een project.
+      </p>
+    </div>
 
-          <p>
-            Een interactief project waarin wij met de NAO-robot werkten aan inclusieve technologie
-            voor het Diemen 800 jaar festival.
-          </p>
+    <div class="card">
+      <h3>Techniek</h3>
+      <p>
+        Ik werk aan mijn technische vaardigheden binnen softwareontwikkeling en heb binnen dit project
+        ervaring opgedaan met de NAO-robot en Choregraphe.
+      </p>
+    </div>
 
-          <span class="tag">NAO Robot</span>
-          <span class="tag">Choregraphe</span>
-          <span class="tag">Inclusiviteit</span>
+    <div class="card">
+      <h3>Samenwerken</h3>
+      <p>
+        Ik werk graag in teamverband, geef updates over mijn voortgang en denk mee tijdens
+        brainstorms, feedbackmomenten en sprintreviews.
+      </p>
+    </div>
+  </div>
+</section>
 
-          <p class="project-link">Bekijk Project →</p>
-        </div>
+<section id="projecten" class="reveal">
+  <h2 class="section-title">Mijn Projecten</h2>
+
+  <a href="project-dark-tech.html" class="project-card-link">
+    <div class="project-card">
+      <div class="project-banner">
+        <h3>Dark Tech – Inclusive Robots</h3>
+        <p>Sociale robots, inclusiviteit en het Diemen 800 jaar festival.</p>
       </div>
-    </a>
 
-  </section>
+      <div class="project-content">
+        <h3>Dark Tech – Inclusive Robots</h3>
+        <p>
+          Voor dit project werkte ik met mijn team aan een interactieve robotervaring met de NAO-robot.
+          We onderzochten eerst de dark side van sociale robots en gebruikten die inzichten daarna om
+          een positieve en inclusieve toepassing te maken.
+        </p>
 
-  <footer>
-    <p>© 2026 Anass Dandi</p>
-  </footer>
+        <span class="tag">NAO Robot</span>
+        <span class="tag">Choregraphe</span>
+        <span class="tag">Inclusiviteit</span>
+        <span class="tag">Onderzoek</span>
+        <span class="tag">Gebruikerstesten</span>
+
+        <p class="project-link">Bekijk Project →</p>
+      </div>
+    </div>
+  </a>
+</section>
+
+<footer>
+  <p>© 2026 Anass Dandi - Portfolio</p>
+</footer>
+
+<script>
+  const reveals = document.querySelectorAll(".reveal");
+
+  function showOnScroll() {
+    reveals.forEach((element) => {
+      const windowHeight = window.innerHeight;
+      const elementTop = element.getBoundingClientRect().top;
+
+      if (elementTop < windowHeight - 100) {
+        element.classList.add("active");
+      }
+    });
+  }
+
+  window.addEventListener("scroll", showOnScroll);
+  showOnScroll();
+</script>
 
 </body>
 </html>
