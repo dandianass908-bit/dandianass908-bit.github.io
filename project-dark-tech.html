@@ -1,473 +1,343 @@
 <!DOCTYPE html>
 <html lang="nl">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Dark Tech - Inclusive Robots</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dark Tech Project | Anass Dandi</title>
 
   <style>
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-      scroll-behavior: smooth;
+      font-family: Arial, sans-serif;
     }
 
     body {
-      font-family: Arial, sans-serif;
-      background: #f4f7fb;
-      color: #172033;
-      line-height: 1.7;
+      background: #f5f7fb;
+      color: #1e293b;
+      line-height: 1.6;
     }
 
     nav {
-      position: fixed;
-      width: 100%;
+      position: sticky;
       top: 0;
       z-index: 1000;
-      background: rgba(255,255,255,0.95);
+      background: linear-gradient(90deg, #1d4ed8, #0f172a);
+      padding: 18px 8%;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 18px 9%;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+      box-shadow: 0 4px 15px rgba(0,0,0,0.15);
     }
 
     nav h2 {
-      color: #2563eb;
+      color: white;
+      font-size: 24px;
     }
 
     nav a {
-      margin-left: 22px;
+      color: white;
       text-decoration: none;
-      color: #172033;
+      margin-left: 24px;
       font-weight: bold;
+      transition: 0.3s;
     }
 
     nav a:hover {
-      color: #2563eb;
+      opacity: 0.8;
     }
 
     .hero {
       background: linear-gradient(135deg, #1e3a8a, #0f172a);
       color: white;
-      padding: 135px 9% 80px;
-    }
-
-    .hero a {
-      color: #93c5fd;
-      text-decoration: none;
-      font-weight: bold;
+      padding: 90px 8%;
+      text-align: center;
     }
 
     .hero h1 {
       font-size: 48px;
-      margin: 20px 0;
+      margin-bottom: 20px;
     }
 
     .hero p {
       max-width: 850px;
-      color: #dbeafe;
-      font-size: 18px;
-    }
-
-    section {
-      padding: 80px 9%;
-    }
-
-    .container {
-      max-width: 1050px;
       margin: auto;
+      font-size: 18px;
+      opacity: 0.95;
     }
 
-    h2 {
-      color: #1e3a8a;
-      font-size: 32px;
+    .section {
+      padding: 80px 8%;
+    }
+
+    .section h2 {
+      font-size: 36px;
       margin-bottom: 25px;
+      color: #0f172a;
     }
 
-    h3 {
-      margin-top: 28px;
-      margin-bottom: 12px;
-      color: #172033;
-    }
-
-    p {
+    .section p {
+      font-size: 17px;
+      margin-bottom: 20px;
       color: #475569;
-      margin-bottom: 18px;
     }
 
-    ul {
-      margin-left: 22px;
-      color: #475569;
-      margin-bottom: 25px;
-    }
-
-    li {
-      margin-bottom: 8px;
-    }
-
-    .highlight {
-      color: #2563eb;
-      font-weight: bold;
-    }
-
-    .cards {
+    .skills-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 22px;
-      margin-top: 25px;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+      margin-top: 35px;
     }
 
-    .card {
+    .skill-card {
       background: white;
-      padding: 26px;
-      border-radius: 18px;
+      padding: 22px;
+      border-radius: 16px;
       box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+      transition: 0.3s;
+    }
+
+    .skill-card:hover {
+      transform: translateY(-5px);
     }
 
     .media-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 22px;
-      margin-top: 25px;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 25px;
+      margin-top: 35px;
     }
 
-    img, video {
-      width: 100%;
-      border-radius: 16px;
-      box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+    .media-card {
       background: white;
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    }
+
+    .media-card img,
+    .media-card video {
+      width: 100%;
+      display: block;
     }
 
     .media-card p {
-      margin-top: 10px;
-      font-size: 14px;
-      color: #64748b;
+      padding: 18px;
+      font-size: 15px;
     }
 
-    .section-light {
+    .highlight {
       background: white;
+      border-radius: 18px;
+      padding: 30px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+      margin-top: 30px;
     }
 
-    .back-link {
+    .back-button {
       display: inline-block;
       margin-top: 40px;
-      color: #2563eb;
+      background: linear-gradient(90deg, #2563eb, #1e40af);
+      color: white;
       text-decoration: none;
+      padding: 14px 28px;
+      border-radius: 12px;
       font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .back-button:hover {
+      transform: translateY(-2px);
     }
 
     footer {
-      background: #020617;
+      background: #0f172a;
       color: white;
       text-align: center;
       padding: 30px;
+      margin-top: 60px;
     }
 
-    .reveal {
-      opacity: 0;
-      transform: translateY(50px);
-      transition: 0.8s ease;
-    }
-
-    .reveal.active {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    @media (max-width: 750px) {
+    @media (max-width: 768px) {
       nav {
         flex-direction: column;
-        gap: 10px;
+        gap: 15px;
       }
 
       nav a {
-        margin: 8px;
+        margin: 0 10px;
       }
 
       .hero h1 {
         font-size: 34px;
       }
+
+      .section h2 {
+        font-size: 28px;
+      }
     }
   </style>
 </head>
-
 <body>
 
 <nav>
-  <h2>Portfolio</h2>
+  <h2>Anass Dandi</h2>
   <div>
     <a href="index.html">Home</a>
-    <a href="index.html#over-mij">Over mij</a>
     <a href="index.html#skills">Skills</a>
     <a href="index.html#projecten">Projecten</a>
   </div>
 </nav>
 
-<header class="hero">
-  <div class="container reveal">
-    <a href="index.html#projecten">← Terug naar projecten</a>
-    <h1>Dark Tech - Inclusive Robots</h1>
-    <p>
-      Een project over sociale robots, inclusiviteit en technologie voor het Diemen 800 jaar festival.
-      We onderzochten eerst de dark side van sociale robots en werkten daarna aan een positieve
-      light side toepassing met de NAO-robot.
-    </p>
-  </div>
-</header>
+<section class="hero">
+  <h1>Dark Tech – Inclusive Robot Project</h1>
+  <p>
+    Een innovatief project waarin we onderzochten hoe sociale robots zowel een dark side als een positive side kunnen hebben.
+    Van ethische risico’s tot inclusieve culturele interacties met een echte NAO robot.
+  </p>
+</section>
 
-<section class="section-light">
-  <div class="container reveal">
-    <h2>Over het project</h2>
+<section class="section">
+  <h2>Project Overzicht</h2>
+
+  <div class="highlight">
     <p>
-      Dit project kwam vanuit Digital Life. De opdracht was om te onderzoeken hoe embodied AI,
-      vooral in de vorm van robotica, kan helpen om inwoners van Diemen op een laagdrempelige
-      manier met elkaar te verbinden.
+      Dit project draaide om het onderzoeken van de impact van sociale robots op mensen.
+      Eerst onderzochten we de <strong>dark side</strong>: manipulatie, afhankelijkheid en emotionele beïnvloeding.
+      Daarna werkten we aan een positieve toepassing waarin robots mensen juist kunnen verbinden.
     </p>
 
     <p>
-      In het begin keken we vooral naar de risico’s van sociale robots. Denk aan privacy,
-      misinformatie, verkeerde verwachtingen en het te snel vertrouwen van een robot.
-      Later draaiden we dit om naar de light side: hoe kan een robot juist zorgen voor verbinding,
-      plezier en inclusieve interactie?
-    </p>
-
-    <h2>Mijn rol</h2>
-    <p>
-      Mijn rol binnen dit project was vooral gericht op onderzoek, meedenken over prototypes en
-      het technisch uitwerken van interacties. Ik heb meegewerkt aan de dark side analyse,
-      het cultuuronderzoek met Dana en het werken met Choregraphe voor de NAO-robot.
+      Voor het Diemen 800 project ontwikkelden we een concept waarbij een robot verschillende culturen vertegenwoordigt via dans,
+      interactie en inclusieve communicatie.
     </p>
 
     <p>
-      Ook hielp ik mee met het nadenken over hoe de robot duidelijk, veilig en begrijpelijk kan
-      communiceren met verschillende doelgroepen. Daarbij lette ik vooral op hoe technologie
-      menselijker en toegankelijker kan worden gemaakt.
+      <strong>Mijn rol:</strong> onderzoek, conceptontwikkeling, prototyping, werken met Choregraphe software en het ontwerpen van robot interacties.
     </p>
   </div>
 </section>
 
-<section>
-  <div class="container reveal">
-    <h2>Van dark side naar light side</h2>
+<section class="section">
+  <h2>Concept & Onderzoek</h2>
 
-    <div class="cards">
-      <div class="card">
-        <h3>Dark side</h3>
-        <p>
-          We onderzochten wat er mis kan gaan bij sociale robots, zoals privacyrisico’s,
-          misinformatie, onbewuste bias en te veel vertrouwen in een robot.
-        </p>
-      </div>
+  <div class="media-grid">
+    <div class="media-card">
+      <img src="images/robot-concept-schets.png" alt="Robot concept">
+      <p>Eerste conceptschets van het robotidee en emotionele interacties.</p>
+    </div>
 
-      <div class="card">
-        <h3>Prototype met emoties</h3>
-        <p>
-          We maakten een kartonnen robotprototype met emotie-animaties. Dit liet zien hoe een
-          robot via gezichtsuitdrukkingen vertrouwen kan opbouwen, maar ook hoe gebruikers
-          daardoor sneller persoonlijke informatie kunnen delen.
-        </p>
-      </div>
+    <div class="media-card">
+      <img src="images/emoties-closeup.png" alt="Emoties concept">
+      <p>Uitwerking van emoties die de robot zou kunnen tonen.</p>
+    </div>
 
-      <div class="card">
-        <h3>Light side</h3>
-        <p>
-          Daarna gebruikten we onze inzichten om een positieve toepassing te maken. De focus
-          verschoof naar verbinding, cultuur, muziek en interactie met de NAO-robot.
-        </p>
-      </div>
+    <div class="media-card">
+      <img src="images/kinderen-ideeen-schets.png" alt="Kinderen ideeën">
+      <p>Brainstorm voor interactieve toepassingen gericht op kinderen.</p>
+    </div>
+
+    <div class="media-card">
+      <img src="images/Ideen schets.png" alt="Ouderen ideeën">
+      <p>Ideeën voor ouderen en sociale toepassingen met muziek en interactie.</p>
     </div>
   </div>
 </section>
 
-<section class="section-light">
-  <div class="container reveal">
-    <h2>Onderzoek en concepten</h2>
-    <p>
-      Voor de light side deden we onderzoek naar verschillende culturen in Diemen.
-      Dit hielp ons om ideeën te bedenken die beter passen bij verschillende leeftijden,
-      achtergronden en interesses.
-    </p>
+<section class="section">
+  <h2>Prototype Fase</h2>
 
-    <div class="media-grid">
-      <div class="media-card">
-        <img src="images/robot-concept-schets.png" alt="Robot concept schets">
-        <p>Eerste conceptschets van de robot met emoties.</p>
-      </div>
-
-      <div class="media-card">
-        <img src="images/emoties-closeup.png" alt="Emotie schets">
-        <p>Schets met emoties zoals blij, verdrietig en liefdevol.</p>
-      </div>
-
-      <div class="media-card">
-        <img src="images/kinderen-ideeen-schets.png" alt="Ideeën voor kinderen">
-        <p>Ideeën voor interacties met kinderen, zoals puzzels en spelvormen.</p>
-      </div>
-
-      <div class="media-card">
-        <img src="images/Ideen schets.png" alt="Ideeën voor ouderen">
-        <p>Ideeën voor ouderen, waaronder muziek en het Hitster-spel.</p>
-      </div>
+  <div class="media-grid">
+    <div class="media-card">
+      <img src="images/DarkSide Prototype.png" alt="Prototype">
+      <p>Een eerste fysiek prototype om robot-interactie tastbaar te maken.</p>
     </div>
   </div>
 </section>
 
-<section>
-  <div class="container reveal">
-    <h2>Prototype fase</h2>
-    <p>
-      In een eerdere fase maakten we een kartonnen robotprototype. Hiermee konden we snel testen
-      hoe mensen reageren op een robot met emoties. De robot had een scherm als gezicht en kon
-      verschillende emoties laten zien.
-    </p>
+<section class="section">
+  <h2>Technische Uitwerking</h2>
 
-    <div class="media-grid">
-      <div class="media-card">
-        <img src="images/DarkSide Prototype.png" alt="Kartonnen robotprototype">
-        <p>Kartonnen prototype met emotie-animaties.</p>
-      </div>
+  <div class="media-grid">
+    <div class="media-card">
+      <img src="images/choregraphe-overzicht.png" alt="Choregraphe overview">
+      <p>Werken met de Choregraphe software om de NAO robot te programmeren.</p>
+    </div>
+
+    <div class="media-card">
+      <img src="images/choregraphe-arm-controls.png" alt="Arm controls">
+      <p>Precisiecontrole van robotarm bewegingen.</p>
+    </div>
+
+    <div class="media-card">
+      <img src="images/choregraphe-tutorial.png" alt="Tutorial">
+      <p>Leren werken met keyframes en robotanimaties.</p>
     </div>
   </div>
 </section>
 
-<section class="section-light">
-  <div class="container reveal">
-    <h2>Werken met NAO en Choregraphe</h2>
-    <p>
-      Voor het eindprototype werkten we met de NAO-robot in Choregraphe.
-      We maakten bewegingen, poses en dansjes die passen bij verschillende culturen.
-      Zo werd het prototype interactiever en leuker voor gebruikers.
-    </p>
+<section class="section">
+  <h2>Demonstratie Video's</h2>
 
-    <div class="media-grid">
-      <div class="media-card">
-        <img src="images/choregraphe-overzicht.png" alt="Choregraphe overzicht">
-        <p>Choregraphe omgeving met de virtuele NAO-robot.</p>
-      </div>
+  <div class="media-grid">
+    <div class="media-card">
+      <video controls>
+        <source src="marokkaans-dansje.mp4.mp4" type="video/mp4">
+      </video>
+      <p>Marokkaanse dans demonstratie.</p>
+    </div>
 
-      <div class="media-card">
-        <img src="images/choregraphe-arm-controls.png" alt="Arm instellingen in Choregraphe">
-        <p>Instellingen voor armbewegingen en poses.</p>
-      </div>
+    <div class="media-card">
+      <video controls>
+        <source src="surinaams-dansje.mp4.mp4" type="video/mp4">
+      </video>
+      <p>Surinaamse dans demonstratie.</p>
+    </div>
 
-      <div class="media-card">
-        <img src="images/choregraphe-tutorial.png" alt="Choregraphe tutorial">
-        <p>Voorbeeld van het maken van keyframes en bewegingen.</p>
-      </div>
+    <div class="media-card">
+      <video controls>
+        <source src="Spaans-dansje.mp4.mp4" type="video/mp4">
+      </video>
+      <p>Spaanse dans demonstratie.</p>
+    </div>
+
+    <div class="media-card">
+      <video controls>
+        <source src="indiase-dansje.mp4.mp4" type="video/mp4">
+      </video>
+      <p>Indiase dans demonstratie.</p>
+    </div>
+
+    <div class="media-card">
+      <video controls>
+        <source src="ontwerpen en realiseren in choregraphe.mp4" type="video/mp4">
+      </video>
+      <p>Ontwerp en technische realisatie in Choregraphe.</p>
     </div>
   </div>
 </section>
 
-<section>
-  <div class="container reveal">
-    <h2>Video’s van het prototype</h2>
-    <p>
-      Hieronder staan video’s van de dansjes en interacties die we gebruikten voor het light side
-      prototype met de NAO-robot.
-    </p>
+<section class="section">
+  <h2>Skills die ik liet zien</h2>
 
-    <div class="media-grid">
-      <div class="media-card">
-        <video controls>
-          <source src="videos/marokkaans-dansje.mp4.mp4" type="video/mp4">
-        </video>
-        <p>Marokkaans dansje met de NAO-robot.</p>
-      </div>
-
-      <div class="media-card">
-        <video controls>
-          <source src="videos/surinaams-dansje.mp4.mp4" type="video/mp4">
-        </video>
-        <p>Surinaams dansje met de NAO-robot.</p>
-      </div>
-
-      <div class="media-card">
-        <video controls>
-          <source src="videos/Spaans-dansje.mp4.mp4" type="video/mp4">
-        </video>
-        <p>Spaans dansje met de NAO-robot.</p>
-      </div>
-
-      <div class="media-card">
-        <video controls>
-          <source src="videos/indiase-dansje.mp4.mp4" type="video/mp4">
-        </video>
-        <p>Indiaas dansje met de NAO-robot.</p>
-      </div>
-
-      <div class="media-card">
-        <video controls>
-          <source src="videos/ontwerpen en realiseren in choregraphe.mp4" type="video/mp4">
-        </video>
-        <p>Ontwerpen en realiseren van bewegingen in Choregraphe.</p>
-      </div>
-    </div>
+  <div class="skills-grid">
+    <div class="skill-card">Onderzoek & Analyse</div>
+    <div class="skill-card">Prototyping</div>
+    <div class="skill-card">UX Thinking</div>
+    <div class="skill-card">Conceptontwikkeling</div>
+    <div class="skill-card">Robotica basis</div>
+    <div class="skill-card">Probleemoplossend denken</div>
+    <div class="skill-card">Samenwerken</div>
+    <div class="skill-card">Creatief ontwerpen</div>
   </div>
-</section>
 
-<section class="section-light">
-  <div class="container reveal">
-    <h2>Skills die ik heb laten zien</h2>
-
-    <div class="cards">
-      <div class="card">
-        <h3>Onderzoek</h3>
-        <p>
-          Ik heb onderzoek gedaan naar risico’s van sociale robots, cultuurverschillen en
-          gebruikersbehoeftes.
-        </p>
-      </div>
-
-      <div class="card">
-        <h3>Prototyping</h3>
-        <p>
-          Ik heb meegewerkt aan prototypes waarmee we ideeën snel konden testen en verbeteren.
-        </p>
-      </div>
-
-      <div class="card">
-        <h3>Techniek</h3>
-        <p>
-          Ik heb ervaring opgedaan met Choregraphe, de NAO-robot en het maken van robotbewegingen.
-        </p>
-      </div>
-
-      <div class="card">
-        <h3>Samenwerken</h3>
-        <p>
-          Ik werkte samen met mijn team aan onderzoek, ideeën, testen, feedback en de verdere
-          uitwerking van het prototype.
-        </p>
-      </div>
-    </div>
-
-    <a class="back-link" href="index.html#projecten">← Terug naar alle projecten</a>
-  </div>
+  <a class="back-button" href="index.html">← Terug naar portfolio</a>
 </section>
 
 <footer>
-  <p>© 2026 Anass Dandi - Portfolio</p>
+  <p>© 2026 Anass Dandi Portfolio</p>
 </footer>
-
-<script>
-  const reveals = document.querySelectorAll(".reveal");
-
-  function showOnScroll() {
-    reveals.forEach((element) => {
-      const windowHeight = window.innerHeight;
-      const elementTop = element.getBoundingClientRect().top;
-
-      if (elementTop < windowHeight - 100) {
-        element.classList.add("active");
-      }
-    });
-  }
-
-  window.addEventListener("scroll", showOnScroll);
-  showOnScroll();
-</script>
 
 </body>
 </html>
