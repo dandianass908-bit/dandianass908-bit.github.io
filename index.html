@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Portfolio Anass Dandi</title>
+  <title>Portfolio | Anass Dandi</title>
 
   <style>
     * {
@@ -16,54 +16,52 @@
     body {
       font-family: Arial, sans-serif;
       background: #f4f7fb;
-      color: #172033;
-      line-height: 1.7;
+      color: #0f172a;
+      line-height: 1.6;
     }
 
     nav {
-      position: fixed;
-      width: 100%;
+      position: sticky;
       top: 0;
       z-index: 1000;
-      background: rgba(255, 255, 255, 0.95);
+      background: white;
       display: flex;
       justify-content: space-between;
       align-items: center;
       padding: 18px 9%;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+      box-shadow: 0 4px 18px rgba(0,0,0,0.08);
     }
 
     nav h2 {
       color: #2563eb;
+      font-size: 24px;
     }
 
     nav a {
       margin-left: 22px;
       text-decoration: none;
-      color: #172033;
+      color: #0f172a;
       font-weight: bold;
+      font-size: 14px;
     }
 
     nav a:hover {
       color: #2563eb;
     }
 
-  .hero {
-  min-height: 55vh;
-  background: linear-gradient(135deg, #1e3a8a, #0f172a);
-  color: white;
-  display: flex;
-  align-items: center;
-  padding: 100px 9% 60px;
-}
+    .hero {
+      background: linear-gradient(135deg, #1e3a8a, #0f172a);
+      color: white;
+      padding: 95px 9%;
+    }
 
     .hero-content {
       max-width: 850px;
     }
 
     .hero h1 {
-      font-size: 56px;
-      margin-bottom: 20px;
+      font-size: 42px;
+      margin-bottom: 18px;
     }
 
     .hero span {
@@ -71,8 +69,8 @@
     }
 
     .hero p {
-      font-size: 21px;
-      margin-bottom: 30px;
+      max-width: 620px;
+      margin-bottom: 28px;
       color: #dbeafe;
     }
 
@@ -80,91 +78,95 @@
       display: inline-block;
       background: #60a5fa;
       color: #0f172a;
-      padding: 14px 28px;
-      border-radius: 10px;
+      padding: 13px 24px;
+      border-radius: 8px;
       text-decoration: none;
       font-weight: bold;
     }
 
     section {
-      padding: 90px 9%;
+      padding: 80px 9%;
     }
 
-    .section-title {
+    section h2 {
       text-align: center;
-      font-size: 36px;
-      margin-bottom: 45px;
-      color: #1e3a8a;
+      font-size: 34px;
+      margin-bottom: 35px;
     }
 
-    .intro-text {
-      max-width: 900px;
+    .over-mij p {
+      max-width: 720px;
       margin: auto;
       text-align: center;
       color: #475569;
-      font-size: 18px;
     }
 
-    .cards {
+    .skills-grid {
+      max-width: 1000px;
+      margin: auto;
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 25px;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 26px;
     }
 
-    .card {
+    .skill-card {
       background: white;
-      padding: 30px;
-      border-radius: 18px;
+      padding: 28px;
+      border-radius: 16px;
       box-shadow: 0 8px 25px rgba(0,0,0,0.08);
     }
 
-    .card h3 {
+    .skill-card h3 {
       color: #2563eb;
-      margin-bottom: 15px;
+      margin-bottom: 16px;
     }
 
-    .project-card-link {
-      text-decoration: none;
-      color: inherit;
-      display: block;
-      max-width: 1000px;
-      margin: auto;
+    .skill-card ul {
+      list-style: none;
+      color: #475569;
+    }
+
+    .skill-card li {
+      padding: 9px 0;
+      border-bottom: 1px solid #e2e8f0;
+    }
+
+    .project-section {
+      background: #eef2f7;
     }
 
     .project-card {
+      max-width: 900px;
+      margin: auto;
       background: white;
-      border-radius: 22px;
+      border-radius: 16px;
       overflow: hidden;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-      transition: 0.3s ease;
-      cursor: pointer;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+      transition: 0.3s;
     }
 
     .project-card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 16px 38px rgba(0,0,0,0.16);
+      transform: translateY(-6px);
     }
 
-    .project-banner {
-      background: linear-gradient(135deg, #2563eb, #0f172a);
+    .project-image {
+      height: 230px;
+      background: linear-gradient(135deg, #1e3a8a, #2563eb, #0f172a);
+      display: flex;
+      justify-content: center;
+      align-items: center;
       color: white;
-      padding: 70px 40px;
-      text-align: center;
-    }
-
-    .project-banner h3 {
-      font-size: 34px;
-      margin-bottom: 15px;
+      font-size: 28px;
+      font-weight: bold;
     }
 
     .project-content {
-      padding: 40px;
+      padding: 30px;
     }
 
     .project-content h3 {
-      color: #1e3a8a;
-      margin-bottom: 12px;
-      font-size: 25px;
+      font-size: 26px;
+      margin-bottom: 15px;
     }
 
     .project-content p {
@@ -172,34 +174,36 @@
       margin-bottom: 18px;
     }
 
-    .tag {
+    .tags span {
       display: inline-block;
       background: #dbeafe;
-      color: #1e3a8a;
-      padding: 7px 15px;
+      color: #1d4ed8;
+      padding: 7px 12px;
       border-radius: 20px;
-      margin: 8px 6px 0 0;
-      font-size: 14px;
+      font-size: 13px;
+      margin-right: 8px;
+      margin-bottom: 12px;
       font-weight: bold;
     }
 
     .project-link {
-      margin-top: 25px;
-      color: #2563eb !important;
+      display: inline-block;
+      margin-top: 10px;
+      color: #2563eb;
       font-weight: bold;
-      font-size: 17px;
+      text-decoration: none;
     }
 
     footer {
-      background: #020617;
+      background: #0f172a;
       color: white;
       text-align: center;
-      padding: 30px;
+      padding: 28px;
     }
 
     .reveal {
       opacity: 0;
-      transform: translateY(60px);
+      transform: translateY(45px);
       transition: 0.8s ease;
     }
 
@@ -208,22 +212,26 @@
       transform: translateY(0);
     }
 
-    @media (max-width: 750px) {
+    @media (max-width: 768px) {
       nav {
         flex-direction: column;
-        gap: 10px;
+        gap: 12px;
       }
 
       nav a {
-        margin: 8px;
+        margin: 0 8px;
+      }
+
+      .hero {
+        padding: 75px 7%;
       }
 
       .hero h1 {
-        font-size: 38px;
+        font-size: 32px;
       }
 
-      .project-content {
-        padding: 25px;
+      section {
+        padding: 60px 7%;
       }
     }
   </style>
@@ -241,98 +249,103 @@
   </div>
 </nav>
 
-<section class="hero" id="home">
+<header id="home" class="hero">
   <div class="hero-content reveal">
     <h1>Hallo, ik ben <span>Anass Dandi</span></h1>
     <p>
       Ik volg de richting Software Engineering en werk graag aan projecten waarin techniek,
       onderzoek en samenwerking samenkomen.
     </p>
-    <a href="#projecten" class="btn">Bekijk mijn project</a>
+    <a class="btn" href="#projecten">Bekijk mijn project</a>
   </div>
-</section>
+</header>
 
-<section id="over-mij" class="reveal">
-  <h2 class="section-title">Over mij</h2>
-  <p class="intro-text">
-    Ik ben een Software Engineering student die graag leert door te doen. Tijdens projecten vind ik
-    het belangrijk om niet alleen naar de techniek te kijken, maar ook naar de mensen die het product
-    uiteindelijk gebruiken. Ik werk graag samen, denk mee over oplossingen en probeer mijn werk
-    duidelijk en overzichtelijk op te leveren.
+<section id="over-mij" class="over-mij reveal">
+  <h2>Over mij</h2>
+  <p>
+    Ik ben een student Software Engineering met interesse in programmeren, technologie en het bouwen
+    van duidelijke digitale oplossingen. Ik werk graag samen in een team en vind het belangrijk om
+    stap voor stap te leren en mijn werk steeds te verbeteren.
   </p>
 </section>
 
 <section id="skills" class="reveal">
-  <h2 class="section-title">Skills</h2>
+  <h2>Skills & Technologieën</h2>
 
-  <div class="cards">
-    <div class="card">
-      <h3>Programmeervaardigheden</h3>
-      <p>
-        HTML, CSS, JavaScript, Java, TypeScript
-      </p>
+  <div class="skills-grid">
+    <div class="skill-card">
+      <h3>Programmeren</h3>
+      <ul>
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>JavaScript</li>
+        <li>Java</li>
+        <li>TypeScript</li>
+      </ul>
     </div>
 
-    <div class="card">
-      <h3>Werkwijze & Methodes</h3>
-      <p>
-        Scrum, projectmatig werken, samenwerken in teamverband, documentatie maken
-      </p>
+    <div class="skill-card">
+      <h3>Tools & Methoden</h3>
+      <ul>
+        <li>Git & GitHub</li>
+        <li>VS Code</li>
+        <li>IntelliJ</li>
+        <li>Scrum</li>
+        <li>Documentatie</li>
+      </ul>
     </div>
 
-    <div class="card">
-      <h3>Technische Tools</h3>
-      <p>
-        Git, GitHub, VS Code, Choregraphe, NAO Robot
-      </p>
-    </div>
-
-    <div class="card">
-      <h3>Persoonlijke Skills</h3>
-      <p>
-        Probleemoplossend denken, samenwerken, doorzettingsvermogen, duidelijke communicatie
-      </p>
+    <div class="skill-card">
+      <h3>Overig</h3>
+      <ul>
+        <li>Samenwerken</li>
+        <li>Doorzettingsvermogen</li>
+        <li>Probleemoplossend vermogen</li>
+        <li>Onderzoek doen</li>
+        <li>Communicatie</li>
+      </ul>
     </div>
   </div>
 </section>
-<section id="projecten" class="reveal">
-  <h2 class="section-title">Mijn Projecten</h2>
 
-  <a href="project-dark-tech.html" class="project-card-link">
+<section id="projecten" class="project-section reveal">
+  <h2>Mijn Projecten</h2>
+
+  <a href="project-dark-tech.html" style="text-decoration: none; color: inherit;">
     <div class="project-card">
-      <div class="project-banner">
-        <h3>Dark Tech – Inclusive Robots</h3>
-        <p>Sociale robots, inclusiviteit en het Diemen 800 jaar festival.</p>
+      <div class="project-image">
+        Dark Tech
       </div>
 
       <div class="project-content">
-        <h3>Dark Tech – Inclusive Robots</h3>
+        <h3>Dark Tech - Inclusive Robots</h3>
         <p>
-          Voor dit project werkte ik met mijn team aan een interactieve robotervaring met de NAO-robot.
-          We onderzochten eerst de dark side van sociale robots en gebruikten die inzichten daarna om
-          een positieve en inclusieve toepassing te maken.
+          Een project over sociale robots, inclusiviteit en interactie. We onderzochten eerst
+          de dark side van robots en werkten daarna aan een positieve light side toepassing
+          met de NAO-robot.
         </p>
 
-        <span class="tag">NAO Robot</span>
-        <span class="tag">Choregraphe</span>
-        <span class="tag">Inclusiviteit</span>
-        <span class="tag">Onderzoek</span>
-        <span class="tag">Gebruikerstesten</span>
+        <div class="tags">
+          <span>Robotica</span>
+          <span>Onderzoek</span>
+          <span>Prototyping</span>
+          <span>Choregraphe</span>
+        </div>
 
-        <p class="project-link">Bekijk Project →</p>
+        <span class="project-link">Bekijk Project →</span>
       </div>
     </div>
   </a>
 </section>
 
 <footer>
-  <p>© 2026 Anass Dandi - Portfolio</p>
+  <p>© 2026 Anass Dandi. Alle rechten voorbehouden.</p>
 </footer>
 
 <script>
   const reveals = document.querySelectorAll(".reveal");
 
-  function showOnScroll() {
+  function revealOnScroll() {
     reveals.forEach((element) => {
       const windowHeight = window.innerHeight;
       const elementTop = element.getBoundingClientRect().top;
@@ -343,8 +356,8 @@
     });
   }
 
-  window.addEventListener("scroll", showOnScroll);
-  showOnScroll();
+  window.addEventListener("scroll", revealOnScroll);
+  revealOnScroll();
 </script>
 
 </body>
