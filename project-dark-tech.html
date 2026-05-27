@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="nl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dark Tech – Inclusive Robots</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dark Tech - Inclusive Robots</title>
 
   <style>
     * {
@@ -11,183 +11,155 @@
       padding: 0;
       box-sizing: border-box;
       scroll-behavior: smooth;
-      font-family: Arial, sans-serif;
     }
 
     body {
-      background-color: #f5f5f5;
-      color: #111827;
+      font-family: Arial, sans-serif;
+      background: #f4f7fb;
+      color: #172033;
       line-height: 1.7;
     }
 
     nav {
-      background: white;
-      padding: 18px 10%;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+      background: rgba(255,255,255,0.95);
       display: flex;
       justify-content: space-between;
       align-items: center;
-      box-shadow: 0 2px 12px rgba(0,0,0,0.08);
-      position: sticky;
-      top: 0;
-      z-index: 100;
+      padding: 18px 9%;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
     }
 
     nav h2 {
-      color: #5b6ee1;
+      color: #2563eb;
     }
 
     nav a {
+      margin-left: 22px;
       text-decoration: none;
-      color: #111827;
-      margin-left: 25px;
+      color: #172033;
       font-weight: bold;
     }
 
     nav a:hover {
-      color: #5b6ee1;
+      color: #2563eb;
     }
 
     .hero {
-      background: linear-gradient(135deg, #5b6ee1, #7c3aed);
+      background: linear-gradient(135deg, #1e3a8a, #0f172a);
       color: white;
-      padding: 90px 10%;
+      padding: 135px 9% 80px;
     }
 
     .hero a {
-      color: white;
+      color: #93c5fd;
       text-decoration: none;
       font-weight: bold;
     }
 
     .hero h1 {
-      font-size: 3rem;
-      margin: 25px 0 15px;
+      font-size: 48px;
+      margin: 20px 0;
     }
 
     .hero p {
       max-width: 850px;
-      font-size: 1.2rem;
+      color: #dbeafe;
+      font-size: 18px;
     }
 
     section {
-      padding: 70px 10%;
+      padding: 80px 9%;
     }
 
-    .content {
-      max-width: 1100px;
+    .container {
+      max-width: 1050px;
       margin: auto;
     }
 
     h2 {
-      font-size: 2.2rem;
+      color: #1e3a8a;
+      font-size: 32px;
       margin-bottom: 25px;
     }
 
     h3 {
+      margin-top: 28px;
       margin-bottom: 12px;
+      color: #172033;
     }
 
     p {
-      color: #4b5563;
+      color: #475569;
       margin-bottom: 18px;
     }
 
-    .intro-box {
-      background: white;
-      padding: 35px;
-      border-radius: 20px;
-      box-shadow: 0 8px 25px rgba(0,0,0,0.08);
-    }
-
-    .tags {
-      margin-top: 20px;
-    }
-
-    .tag {
-      display: inline-block;
-      background: #eef2ff;
-      color: #4f46e5;
-      padding: 8px 14px;
-      border-radius: 25px;
-      margin: 6px;
-      font-size: 0.9rem;
-      font-weight: bold;
-    }
-
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 24px;
-      margin-top: 30px;
-    }
-
-    .card {
-      background: white;
-      padding: 28px;
-      border-radius: 18px;
-      box-shadow: 0 8px 25px rgba(0,0,0,0.08);
-    }
-
-    .card h3 {
-      color: #5b6ee1;
-    }
-
-    .highlight {
-      background: #eef2ff;
-    }
-
-    .media-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 24px;
-      margin-top: 30px;
-    }
-
-    .media-card {
-      background: white;
-      border-radius: 18px;
-      overflow: hidden;
-      box-shadow: 0 8px 25px rgba(0,0,0,0.1);
-    }
-
-    .media-card img,
-    .media-card video {
-      width: 100%;
-      display: block;
-    }
-
-    .media-card p {
-      padding: 16px;
-      margin: 0;
-      font-size: 0.95rem;
-    }
-
-    .dark-section {
-      background: #111827;
-      color: white;
-    }
-
-    .dark-section h2,
-    .dark-section h3 {
-      color: white;
-    }
-
-    .dark-section p,
-    .dark-section li {
-      color: #d1d5db;
-    }
-
     ul {
-      margin-left: 20px;
-      color: #4b5563;
+      margin-left: 22px;
+      color: #475569;
+      margin-bottom: 25px;
     }
 
     li {
       margin-bottom: 8px;
     }
 
+    .highlight {
+      color: #2563eb;
+      font-weight: bold;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 22px;
+      margin-top: 25px;
+    }
+
+    .card {
+      background: white;
+      padding: 26px;
+      border-radius: 18px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+    }
+
+    .media-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 22px;
+      margin-top: 25px;
+    }
+
+    img, video {
+      width: 100%;
+      border-radius: 16px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+      background: white;
+    }
+
+    .media-card p {
+      margin-top: 10px;
+      font-size: 14px;
+      color: #64748b;
+    }
+
+    .section-light {
+      background: white;
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-top: 40px;
+      color: #2563eb;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
     footer {
-      background: #0f172a;
+      background: #020617;
       color: white;
       text-align: center;
       padding: 30px;
@@ -195,7 +167,7 @@
 
     .reveal {
       opacity: 0;
-      transform: translateY(45px);
+      transform: translateY(50px);
       transition: 0.8s ease;
     }
 
@@ -204,7 +176,7 @@
       transform: translateY(0);
     }
 
-    @media (max-width: 700px) {
+    @media (max-width: 750px) {
       nav {
         flex-direction: column;
         gap: 10px;
@@ -215,7 +187,7 @@
       }
 
       .hero h1 {
-        font-size: 2.2rem;
+        font-size: 34px;
       }
     }
   </style>
@@ -227,259 +199,251 @@
   <h2>Portfolio</h2>
   <div>
     <a href="index.html">Home</a>
-    <a href="#rol">Mijn rol</a>
-    <a href="#proces">Proces</a>
-    <a href="#media">Media</a>
+    <a href="index.html#over-mij">Over mij</a>
+    <a href="index.html#skills">Skills</a>
+    <a href="index.html#projecten">Projecten</a>
   </div>
 </nav>
 
 <header class="hero">
-  <a href="index.html">← Terug naar portfolio</a>
-  <h1>Dark Tech – Inclusive Robots</h1>
-  <p>
-    Een project waarin we onderzochten hoe sociale robots mensen uit verschillende culturen
-    op een leuke en toegankelijke manier met elkaar kunnen verbinden.
-  </p>
+  <div class="container reveal">
+    <a href="index.html#projecten">← Terug naar projecten</a>
+    <h1>Dark Tech - Inclusive Robots</h1>
+    <p>
+      Een project over sociale robots, inclusiviteit en technologie voor het Diemen 800 jaar festival.
+      We onderzochten eerst de dark side van sociale robots en werkten daarna aan een positieve
+      light side toepassing met de NAO-robot.
+    </p>
+  </div>
 </header>
 
-<section class="reveal">
-  <div class="content intro-box">
+<section class="section-light">
+  <div class="container reveal">
     <h2>Over het project</h2>
     <p>
-      Voor dit project werkten wij aan een robotervaring voor het Diemen 800 jaar festival.
-      De opdracht kwam vanuit Digital Life. Het doel was om te onderzoeken hoe embodied AI
-      en sociale robots kunnen bijdragen aan sociale cohesie en inclusiviteit.
+      Dit project kwam vanuit Digital Life. De opdracht was om te onderzoeken hoe embodied AI,
+      vooral in de vorm van robotica, kan helpen om inwoners van Diemen op een laagdrempelige
+      manier met elkaar te verbinden.
     </p>
 
     <p>
-      In het begin keken we vooral naar de dark side van sociale robots. Daarna gebruikten we
-      die inzichten om een positieve toepassing te ontwerpen: de light side. Uiteindelijk gingen
-      we aan de slag met de NAO-robot en een interactief spel rond landen, culturen en muziek.
+      In het begin keken we vooral naar de risico’s van sociale robots. Denk aan privacy,
+      misinformatie, verkeerde verwachtingen en het te snel vertrouwen van een robot.
+      Later draaiden we dit om naar de light side: hoe kan een robot juist zorgen voor verbinding,
+      plezier en inclusieve interactie?
     </p>
 
-    <div class="tags">
-      <span class="tag">NAO Robot</span>
-      <span class="tag">Choregraphe</span>
-      <span class="tag">Social Robots</span>
-      <span class="tag">Inclusiviteit</span>
-      <span class="tag">Gebruikerstesten</span>
-      <span class="tag">Onderzoek</span>
+    <h2>Mijn rol</h2>
+    <p>
+      Mijn rol binnen dit project was vooral gericht op onderzoek, meedenken over prototypes en
+      het technisch uitwerken van interacties. Ik heb meegewerkt aan de dark side analyse,
+      het cultuuronderzoek met Dana en het werken met Choregraphe voor de NAO-robot.
+    </p>
+
+    <p>
+      Ook hielp ik mee met het nadenken over hoe de robot duidelijk, veilig en begrijpelijk kan
+      communiceren met verschillende doelgroepen. Daarbij lette ik vooral op hoe technologie
+      menselijker en toegankelijker kan worden gemaakt.
+    </p>
+  </div>
+</section>
+
+<section>
+  <div class="container reveal">
+    <h2>Van dark side naar light side</h2>
+
+    <div class="cards">
+      <div class="card">
+        <h3>Dark side</h3>
+        <p>
+          We onderzochten wat er mis kan gaan bij sociale robots, zoals privacyrisico’s,
+          misinformatie, onbewuste bias en te veel vertrouwen in een robot.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Prototype met emoties</h3>
+        <p>
+          We maakten een kartonnen robotprototype met emotie-animaties. Dit liet zien hoe een
+          robot via gezichtsuitdrukkingen vertrouwen kan opbouwen, maar ook hoe gebruikers
+          daardoor sneller persoonlijke informatie kunnen delen.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Light side</h3>
+        <p>
+          Daarna gebruikten we onze inzichten om een positieve toepassing te maken. De focus
+          verschoof naar verbinding, cultuur, muziek en interactie met de NAO-robot.
+        </p>
+      </div>
     </div>
   </div>
 </section>
 
-<section id="rol" class="reveal">
-  <div class="content">
-    <h2>Mijn rol</h2>
+<section class="section-light">
+  <div class="container reveal">
+    <h2>Onderzoek en concepten</h2>
+    <p>
+      Voor de light side deden we onderzoek naar verschillende culturen in Diemen.
+      Dit hielp ons om ideeën te bedenken die beter passen bij verschillende leeftijden,
+      achtergronden en interesses.
+    </p>
 
-    <div class="grid">
+    <div class="media-grid">
+      <div class="media-card">
+        <img src="images/robot-concept-schets.png" alt="Robot concept schets">
+        <p>Eerste conceptschets van de robot met emoties.</p>
+      </div>
+
+      <div class="media-card">
+        <img src="images/emoties-closeup.png" alt="Emotie schets">
+        <p>Schets met emoties zoals blij, verdrietig en liefdevol.</p>
+      </div>
+
+      <div class="media-card">
+        <img src="images/kinderen-ideeen-schets.png" alt="Ideeën voor kinderen">
+        <p>Ideeën voor interacties met kinderen, zoals puzzels en spelvormen.</p>
+      </div>
+
+      <div class="media-card">
+        <img src="images/Ideen schets.png" alt="Ideeën voor ouderen">
+        <p>Ideeën voor ouderen, waaronder muziek en het Hitster-spel.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container reveal">
+    <h2>Prototype fase</h2>
+    <p>
+      In een eerdere fase maakten we een kartonnen robotprototype. Hiermee konden we snel testen
+      hoe mensen reageren op een robot met emoties. De robot had een scherm als gezicht en kon
+      verschillende emoties laten zien.
+    </p>
+
+    <div class="media-grid">
+      <div class="media-card">
+        <img src="images/DarkSide Prototype.png" alt="Kartonnen robotprototype">
+        <p>Kartonnen prototype met emotie-animaties.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section-light">
+  <div class="container reveal">
+    <h2>Werken met NAO en Choregraphe</h2>
+    <p>
+      Voor het eindprototype werkten we met de NAO-robot in Choregraphe.
+      We maakten bewegingen, poses en dansjes die passen bij verschillende culturen.
+      Zo werd het prototype interactiever en leuker voor gebruikers.
+    </p>
+
+    <div class="media-grid">
+      <div class="media-card">
+        <img src="images/choregraphe-overzicht.png" alt="Choregraphe overzicht">
+        <p>Choregraphe omgeving met de virtuele NAO-robot.</p>
+      </div>
+
+      <div class="media-card">
+        <img src="images/choregraphe-arm-controls.png" alt="Arm instellingen in Choregraphe">
+        <p>Instellingen voor armbewegingen en poses.</p>
+      </div>
+
+      <div class="media-card">
+        <img src="images/choregraphe-tutorial.png" alt="Choregraphe tutorial">
+        <p>Voorbeeld van het maken van keyframes en bewegingen.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container reveal">
+    <h2>Video’s van het prototype</h2>
+    <p>
+      Hieronder staan video’s van de dansjes en interacties die we gebruikten voor het light side
+      prototype met de NAO-robot.
+    </p>
+
+    <div class="media-grid">
+      <div class="media-card">
+        <video controls>
+          <source src="videos/marokkaans-dansje.mp4.mp4" type="video/mp4">
+        </video>
+        <p>Marokkaans dansje met de NAO-robot.</p>
+      </div>
+
+      <div class="media-card">
+        <video controls>
+          <source src="videos/surinaams-dansje.mp4.mp4" type="video/mp4">
+        </video>
+        <p>Surinaams dansje met de NAO-robot.</p>
+      </div>
+
+      <div class="media-card">
+        <video controls>
+          <source src="videos/Spaans-dansje.mp4.mp4" type="video/mp4">
+        </video>
+        <p>Spaans dansje met de NAO-robot.</p>
+      </div>
+
+      <div class="media-card">
+        <video controls>
+          <source src="videos/indiase-dansje.mp4.mp4" type="video/mp4">
+        </video>
+        <p>Indiaas dansje met de NAO-robot.</p>
+      </div>
+
+      <div class="media-card">
+        <video controls>
+          <source src="videos/ontwerpen en realiseren in choregraphe.mp4" type="video/mp4">
+        </video>
+        <p>Ontwerpen en realiseren van bewegingen in Choregraphe.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section-light">
+  <div class="container reveal">
+    <h2>Skills die ik heb laten zien</h2>
+
+    <div class="cards">
       <div class="card">
         <h3>Onderzoek</h3>
         <p>
-          Ik deed onderzoek naar privacyrisico’s van sociale robots. Hierbij keek ik naar
-          camera’s, microfoons, sensoren, dataverzameling en wat dit kan betekenen voor gebruikers.
+          Ik heb onderzoek gedaan naar risico’s van sociale robots, cultuurverschillen en
+          gebruikersbehoeftes.
         </p>
       </div>
 
       <div class="card">
-        <h3>Culturen in Diemen</h3>
+        <h3>Prototyping</h3>
         <p>
-          Samen met Dana deed ik onderzoek naar verschillende culturen in Diemen. Dit was
-          voorbereiding voor de light side, zodat ons prototype beter kon aansluiten op verschillende mensen.
+          Ik heb meegewerkt aan prototypes waarmee we ideeën snel konden testen en verbeteren.
         </p>
-      </div>
-
-      <div class="card">
-        <h3>Technische bijdrage</h3>
-        <p>
-          Later in het project ben ik meer gaan werken aan de technische kant. Ik heb meegekeken
-          en meegewerkt met de NAO-robot, Choregraphe, bewegingen en het testen van het prototype.
-        </p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="proces" class="highlight reveal">
-  <div class="content">
-    <h2>Projectproces</h2>
-
-    <div class="grid">
-      <div class="card">
-        <h3>Dark side onderzoek</h3>
-        <p>
-          We onderzochten wat er mis kan gaan bij sociale robots. Denk aan privacy,
-          misinformatie, bias, softwarebugs en het vertrouwen dat mensen kunnen krijgen in een robot.
-        </p>
-      </div>
-
-      <div class="card">
-        <h3>Dark side prototype</h3>
-        <p>
-          We maakten een kartonnen robotprototype met emotie-animaties. De doelgroep hierbij
-          was jonge meisjes, omdat zij sneller vertrouwen kunnen krijgen in sociale robots.
-          Hiermee wilden we laten zien dat emotionele robots ervoor kunnen zorgen dat gebruikers
-          sneller persoonlijke of gevoelige informatie delen.
-        </p>
-      </div>
-
-      <div class="card">
-        <h3>Eerste light side prototype</h3>
-        <p>
-          Daarna maakten we een dialoog voor de NAO-robot met informatie over Nederland en
-          Suriname. Door gebruikerstesten kwamen we erachter dat de robot korter, duidelijker
-          en interactiever moest praten.
-        </p>
-      </div>
-
-      <div class="card">
-        <h3>Hitster spel met NAO</h3>
-        <p>
-          In de laatste sprint zijn we bezig met een Hitster-achtig spel op de NAO-robot.
-          De robot doet dansjes en bewegingen die gekoppeld zijn aan landen en culturen,
-          zoals een Marokkaans dansje en een Surinaams dansje.
-        </p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="reveal">
-  <div class="content">
-    <h2>Skills die ik heb laten zien</h2>
-
-    <div class="grid">
-      <div class="card">
-        <h3>Onderzoek & analyse</h3>
-        <ul>
-          <li>Privacyrisico’s onderzoeken</li>
-          <li>Culturen vergelijken</li>
-          <li>Informatie duidelijk samenvatten</li>
-          <li>Conclusies gebruiken voor ontwerpkeuzes</li>
-        </ul>
       </div>
 
       <div class="card">
         <h3>Techniek</h3>
-        <ul>
-          <li>Werken met de NAO-robot</li>
-          <li>Werken met Choregraphe</li>
-          <li>Robotbewegingen testen</li>
-          <li>Prototype verbeteren</li>
-        </ul>
+        <p>
+          Ik heb ervaring opgedaan met Choregraphe, de NAO-robot en het maken van robotbewegingen.
+        </p>
       </div>
 
       <div class="card">
-        <h3>Samenwerking</h3>
-        <ul>
-          <li>Brainstormsessies</li>
-          <li>Feedback verwerken</li>
-          <li>Gebruikerstesten uitvoeren</li>
-          <li>Presenteren tijdens sprintreviews</li>
-        </ul>
+        <h3>Samenwerken</h3>
+        <p>
+          Ik werkte samen met mijn team aan onderzoek, ideeën, testen, feedback en de verdere
+          uitwerking van het prototype.
+        </p>
       </div>
     </div>
-  </div>
-</section>
 
-<section class="highlight reveal" id="media">
-  <div class="content">
-    <h2>Beeldmateriaal</h2>
-
-    <div class="media-grid">
-      <div class="media-card">
-        <img src="images/sprint2-schets.png" alt="Schets robotprototype">
-        <p>Eerste schets van het dark side robotprototype.</p>
-      </div>
-
-      <div class="media-card">
-        <img src="images/sprint2-kartonnen-robot.png" alt="Kartonnen robotprototype">
-        <p>Kartonnen robotprototype met scherm als gezicht.</p>
-      </div>
-
-      <div class="media-card">
-        <img src="images/sprint2-emoties.png" alt="Emotie prototype">
-        <p>Prototype met emotie-animaties.</p>
-      </div>
-
-      <div class="media-card">
-        <img src="images/choregraphe-1.png" alt="Choregraphe">
-        <p>Werken aan bewegingen van de NAO-robot in Choregraphe.</p>
-      </div>
-
-      <div class="media-card">
-        <img src="images/choregraphe-2.png" alt="NAO software">
-        <p>Testen van bewegingen en instellingen van de robot.</p>
-      </div>
-
-      <div class="media-card">
-        <img src="images/nao-prototype.png" alt="NAO robot prototype">
-        <p>NAO-robot tijdens het ontwikkelen van het prototype.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="reveal">
-  <div class="content">
-    <h2>Video’s van het prototype</h2>
-
-    <div class="media-grid">
-      <div class="media-card">
-        <video controls>
-          <source src="videos/gebruikerstest-sprint3.mp4" type="video/mp4">
-        </video>
-        <p>Gebruikerstest met de eerste NAO-dialoog.</p>
-      </div>
-
-      <div class="media-card">
-        <video controls>
-          <source src="videos/nao-demo-1.mp4" type="video/mp4">
-        </video>
-        <p>Test van bewegingen en interactie met de NAO-robot.</p>
-      </div>
-
-      <div class="media-card">
-        <video controls>
-          <source src="videos/nao-demo-2.mp4" type="video/mp4">
-        </video>
-        <p>Demo van het light side prototype.</p>
-      </div>
-
-      <div class="media-card">
-        <video controls>
-          <source src="videos/marokkaans-dansje.mp4" type="video/mp4">
-        </video>
-        <p>Voorbeeld van een dansje gekoppeld aan een cultuur.</p>
-      </div>
-
-      <div class="media-card">
-        <video controls>
-          <source src="videos/surinaams-dansje.mp4" type="video/mp4">
-        </video>
-        <p>Voorbeeld van een beweging/dans binnen het Hitster-spel.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="dark-section reveal">
-  <div class="content">
-    <h2>Reflectie</h2>
-
-    <p>
-      Tijdens dit project heb ik geleerd dat een goed prototype niet alleen technisch moet werken,
-      maar ook moet passen bij de mensen die het gebruiken. In het begin lag mijn focus vooral
-      op onderzoek, maar later ben ik meer gaan werken aan de technische kant met de NAO-robot
-      en Choregraphe.
-    </p>
-
-    <p>
-      Door de gebruikerstesten zagen we dat onze eerste versie nog te lange teksten had en dat
-      gebruikers meer interactie wilden. Hierdoor konden we het prototype verbeteren. Ook heb ik
-      geleerd om flexibel te blijven wanneer dingen anders lopen dan gepland, zoals bij de
-      beschikbaarheid van de robot.
-    </p>
+    <a class="back-link" href="index.html#projecten">← Terug naar alle projecten</a>
   </div>
 </section>
 
